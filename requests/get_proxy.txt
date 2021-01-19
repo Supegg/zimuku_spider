@@ -1,0 +1,8 @@
+proxynova(recommended):
+    https://www.proxynova.com/proxy-server-list/country-cn/
+    "(\d+\.\d+\.\d+\.\d+)".+?\>\s+?(\d+)
+    
+
+spys.one:
+    https://spys.one/en/http-proxy-list/
+    (\d+\.\d+\.\d+\.\d+)<script.+?:</font>(\d+)
