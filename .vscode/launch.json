@@ -5,22 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "my_spider",
-            "type": "python",
-            "request": "launch",
-            "module": "scrapy",
-            "cwd": "${workspaceRoot}/mySpider",
-            "args": [
-                "crawl",
-                "runoob"
-            ]
-        },
-        {
             "name": "zimuku.py",
             "type": "python",
             "request": "launch",
             "program": "${workspaceRoot}/requests/zimuku.py",
             "cwd": "${workspaceRoot}/requests",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "dwf",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceRoot}/dialogue_word_frequency.py",
+            "cwd": "${workspaceRoot}",
             "console": "integratedTerminal"
         },
         {
@@ -32,6 +29,17 @@
             "args": [
                 "crawl",
                 "zmk"
+            ]
+        },
+        {
+            "name": "my_spider",
+            "type": "python",
+            "request": "launch",
+            "module": "scrapy",
+            "cwd": "${workspaceRoot}/mySpider",
+            "args": [
+                "crawl",
+                "runoob"
             ]
         },
     ]

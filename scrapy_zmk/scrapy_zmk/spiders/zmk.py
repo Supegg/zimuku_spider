@@ -15,8 +15,8 @@ class ZmkSpider(scrapy.Spider):
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'}
 
     def start_requests(self):
-        index = 1
-        while index < 3:
+        index = 125042 # index = 1
+        while index < 30000:
             url = f'http://www.zimuku.la/detail/{index}.html'
             print(f'at {index}: # {url}')
             item = ScrapyZmkItem()
