@@ -152,10 +152,26 @@ def get_files(file):
 def da(file):
     d=data()
     r=re.compile(r'\b([A-Za-z]+)\b')
+    rl = re.compile(r"}([a-zA-Z\d\s,\.?!']+)\n") # 取对白部分
 
     with open(file, mode = 'rt', encoding = 'utf-8', errors = 'ignore') as f:
+        fl = f.readline().replace('\x00', '')
+        if '[Script Info]' in fl:
+            suf = 'ass'
+        else:
+            suf = 'srt'
+
         for line in f:
             line=line.replace('\x00', '')
+
+            if suf=='ass':
+                line = line.replace('{\\r}', '')
+                m = rl.search(line)
+                if m:
+                    line = m.group(1)
+                else:
+                    continue
+
             # print(line)
             for m in r.finditer(line):
                 w=m.group(1)
